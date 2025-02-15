@@ -1,13 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func Repeat(input string, count int) string {
-	var result string
+	var result strings.Builder
 	for i := 0; i < count; i++ {
-		result = result + input
+		result.WriteString(input)
 	}
-	return result
+	return result.String()
 }
 
 func main() {

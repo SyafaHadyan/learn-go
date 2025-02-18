@@ -3,6 +3,8 @@ package main
 import (
     "fmt"
     "strings"
+    "math/rand"
+    "time"
 )
 
 func printName(greet string, name []string) {
@@ -16,9 +18,14 @@ func printNameJoin(name []string) {
     fmt.Println(strings.Join(name, " "))
 }
 
+func getRandomNumber() int {
+    return rand.New(rand.NewSource(time.Now().Unix())).Int()
+}
+
 func main() {
     var names = []string{"Person0", "Person1"}
     printName("testGreet", names)
     printNameJoin(names)
+    fmt.Println(getRandomNumber())
 }
 

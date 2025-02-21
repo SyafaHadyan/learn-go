@@ -13,15 +13,13 @@ func sumNumber(num ...int) int {
 	return result
 }
 
-func averageNumber(num ...int) float32 {
-	result := float32(sumNumber(num...)) / float32(len(num))
-
-	return result
+func averageNumber(num ...int) float64 {
+	return float64(sumNumber(num...)) / float64(len(num))
 }
 
 func main() {
 	number := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	fmt.Println(sumNumber(number...))
-	// fmt.Println(averageNumber(1, 2, 3, 4, 5, 6, 7, 8, 9))
-	fmt.Println(averageNumber(number...))
+	fmt.Printf("Number: %v\n", number)
+	fmt.Printf("Sum: %d\n", sumNumber(number...))
+	fmt.Printf("Average: %.3f\n", averageNumber(number...))
 }
